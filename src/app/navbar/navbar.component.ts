@@ -10,7 +10,7 @@ import { AuthUser } from '../shared/services/authService';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  isAuthenticated: boolean;
+  isAuthenticated: boolean=true;
   constructor(public authUser: AuthUser,
     public router: Router,
     //private pubsub: NgxPubSubService,
@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.isAuthenticated = this.authUser.isUserAuthenticated();
+    //this.isAuthenticated = this.authUser.isUserAuthenticated();
   }
 
   logout() {
