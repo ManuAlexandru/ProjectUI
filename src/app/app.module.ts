@@ -25,6 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPubSubModule } from '@pscoped/ngx-pub-sub';
+import {MatCardModule} from '@angular/material/card';
+import { CreateProductComponent } from './product-components/create-product/create-product.component';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -43,6 +45,7 @@ export function tokenGetter() {
     RoleModelComponent,
     AdminComponent,
     DialogLogoutComponent,
+    CreateProductComponent,
    
   ],
   imports: [
@@ -59,6 +62,7 @@ export function tokenGetter() {
     MatRadioModule,
     BrowserAnimationsModule,
     NgxPubSubModule,
+    MatCardModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

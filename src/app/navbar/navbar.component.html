@@ -10,6 +10,9 @@
     <div *ngIf="isAuthenticated && authUser.checkUser()">
       <a mat-button routerLink="yourProducts">Commands</a>
     </div>
+    <div *ngIf="isAuthenticated && authUser.checkUser()">
+      <a mat-button routerLink="createProduct">Add Product</a>
+    </div>
     <a mat-button routerLink="allProducts">Products</a>
     <div *ngIf="!isAuthenticated">
       <a mat-raised-button routerLink="auth">Sign Up</a>
@@ -17,4 +20,5 @@
     <div *ngIf="isAuthenticated">
       <a mat-raised-button color="warn" (click)="logout()">Log Out</a>
     </div>
+
   </mat-toolbar>

@@ -6,6 +6,7 @@ import { LoginComponent } from './auth-components/login/login.component';
 import { RegisterComponent } from './auth-components/register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './product-components/all-products/all-products.component';
+import { CreateProductComponent } from './product-components/create-product/create-product.component';
 import { ProductComponent } from './product-components/product/product.component';
 import { ProductsBoughtComponent } from './products-bought/products-bought.component';
 import { AuthGuard } from './shared/guards/auth.guard';
@@ -25,6 +26,14 @@ const routes: Routes = [
   {
     path: 'yourProducts',
     component: ProductsBoughtComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: {
+      expectedRoles: RoleModelComponent.UserPage,
+    },
+  },
+  {
+    path: 'createProduct',
+    component: CreateProductComponent,
     canActivate: [AuthGuard, RoleGuard],
     data: {
       expectedRoles: RoleModelComponent.UserPage,

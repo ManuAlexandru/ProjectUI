@@ -5,6 +5,7 @@ import {
   MAT_DIALOG_DATA,
 } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { NgxPubSubService } from '@pscoped/ngx-pub-sub';
 
 @Component({
   selector: 'app-dialog-logout',
@@ -15,7 +16,7 @@ export class DialogLogoutComponent implements OnInit {
 
   constructor(
     public router: Router,
-    //public pubsub: NgxPubSubService,
+    public pubsub: NgxPubSubService,
     public dialogRef: MatDialogRef<DialogLogoutComponent>
   ) { }
 
@@ -24,7 +25,7 @@ export class DialogLogoutComponent implements OnInit {
   onClick() {
     this.dialogRef.close();
     localStorage.removeItem('token');
-   // this.pubsub.publishEvent('logout', false);
+    this.pubsub.publishEvent('logout', false);
     this.router.navigateByUrl('');
   }
 }

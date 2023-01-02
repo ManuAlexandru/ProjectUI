@@ -43,12 +43,12 @@ export class LoginComponent implements OnInit {
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.router.navigateByUrl('');
-       // this._service.invalidLogin = false;
+        //  this._service.invalidLogin = false;
         this.pubsub.publishEvent('login', true);
       },
       error: (err) => {
-       // this._service.invalidLogin = true;
-        //this.errorMessage = err.error.message;
+        // this._service.invalidLogin = true;
+        // this.errorMessage = err.error.message;
       },
     });
   }

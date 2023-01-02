@@ -52,6 +52,7 @@ export class AuthUser {
   isAuthorized(route: ActivatedRouteSnapshot): boolean {
     return this.checkRole(this.getRole(), route.data.expectedRoles);
   }
+  
   checkRole(userRole: string, roles: string[]) {
     const roleMatches = roles.indexOf(userRole);
     if (roleMatches < 0) return false;
