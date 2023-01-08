@@ -13,19 +13,18 @@
       </mat-card-content>
       <mat-card-actions class="course-actions">
         <!-- [routerLink]="['/courses', product.id]" -->
-          <button mat-raised-button color="primary" >
-            BID
+          <button mat-raised-button color="primary" 
+          (click)="editUser(product.id)">
+           Edit
           </button>
   
-          <button mat-raised-button color="accent"
-                 >
-                  BUY NOW
+          <button mat-raised-button color="warn"
+            (click)="deleteUser(product.id)"     >
+                 Delete
           </button>
-          <button mat-raised-button color="accent"
-          >
-          DETAILS
-   </button>
+         
       </mat-card-actions>
     </mat-card>
     </div>
   
+    <simple-notifications></simple-notifications>

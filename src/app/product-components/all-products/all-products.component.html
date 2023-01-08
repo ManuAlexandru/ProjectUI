@@ -1,6 +1,11 @@
+<div>
+  <input placeholder="Search by title"
+  [(ngModel)]="filterText"/>
+</div>
+
 <div class="container">
 
-  <mat-card *ngFor="let product of lstProducts" class="example-card" >
+  <mat-card *ngFor="let product of lstProducts | filterProduct:filterText" class="example-card" >
     <mat-card-header>
       <mat-card-title>{{product.title}}</mat-card-title>
     </mat-card-header>
@@ -13,7 +18,8 @@
     </mat-card-content>
     <mat-card-actions class="course-actions">
       <!-- [routerLink]="['/courses', product.id]" -->
-        <button mat-raised-button color="primary" >
+        <button mat-raised-button color="primary" 
+        (click)="bidProduct(product.id)">
           BID
         </button>
 

@@ -1,1 +1,14 @@
-<p>dialog-bid works!</p>
+<h2>Edit Product</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="data.actualPrice" />
+  </mat-form-field>
+  <br />
+  
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data">BID</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+

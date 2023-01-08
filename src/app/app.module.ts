@@ -28,9 +28,12 @@ import { NgxPubSubModule } from '@pscoped/ngx-pub-sub';
 import {MatCardModule} from '@angular/material/card';
 import { CreateProductComponent } from './product-components/create-product/create-product.component';
 import { YourProductsComponent } from './product-components/your-products/your-products.component';
-import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
-import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
-import { DialogBidComponent } from './dialog-bid/dialog-bid.component';
+import { DialogEditComponent } from './dialogs/dialog-edit/dialog-edit.component';
+import { DialogDeleteComponent } from './dialogs/dialog-delete/dialog-delete.component';
+import { DialogBidComponent } from './dialogs/dialog-bid/dialog-bid.component';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { FormsModule } from '@angular/forms'
+import { SearchPipe } from './shared/services/search.pipe';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -54,6 +57,7 @@ export function tokenGetter() {
     DialogEditComponent,
     DialogDeleteComponent,
     DialogBidComponent,
+    SearchPipe,
    
   ],
   imports: [
@@ -71,6 +75,8 @@ export function tokenGetter() {
     BrowserAnimationsModule,
     NgxPubSubModule,
     MatCardModule,
+    FormsModule,
+    SimpleNotificationsModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogLogoutComponent } from '../dialog-logout/dialog-logout.component';
 
 @Component({
   selector: 'app-dialog-delete',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogDeleteComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: string,
+  public dialogRef: MatDialogRef<DialogLogoutComponent>) { }
 
   ngOnInit(): void {
   }
