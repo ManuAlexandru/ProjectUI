@@ -9,6 +9,7 @@ import { EndpointModel } from "../models/endpointModel";
   })
 export class UserService{
 constructor(private http:HttpClient,private endpoint:EndpointModel){}
+
 postUserRegister(user:AuthUserModel):Observable<any>{
     return this.http.post(this.endpoint.registerRoute,user);
 }

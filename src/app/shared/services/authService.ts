@@ -3,6 +3,7 @@ import { ActivatedRouteSnapshot } from '@angular/router';
 import { RoleModelComponent } from '../models/role-model/role-model.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import jwt_decode from 'jwt-decode';
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
@@ -57,5 +58,11 @@ export class AuthUser {
     const roleMatches = roles.indexOf(userRole);
     if (roleMatches < 0) return false;
     return true;
+  }
+  createHeader(){
+    var tokenHeader = new HttpHeaders({
+      Authorization: 'Bearer ' + localStorage.getItem('token'),
+    });
+    return tokenHeader;
   }
 }

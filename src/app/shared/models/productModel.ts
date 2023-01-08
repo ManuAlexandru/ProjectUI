@@ -2,6 +2,7 @@ export  class ProductModel{
 title:String;
 description:String;
 price:number;
-dateUntilSold:number;
-photoRoute:String;
+createdDate:number;
+userId:number;
+// photo:File;
 }

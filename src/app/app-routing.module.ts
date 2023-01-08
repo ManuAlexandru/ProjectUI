@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AllProductsComponent } from './product-components/all-products/all-products.component';
 import { CreateProductComponent } from './product-components/create-product/create-product.component';
 import { ProductComponent } from './product-components/product/product.component';
+import { YourProductsComponent } from './product-components/your-products/your-products.component';
 import { ProductsBoughtComponent } from './products-bought/products-bought.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { RoleGuard } from './shared/guards/role.guard';
@@ -24,12 +25,22 @@ const routes: Routes = [
     },
   },
   {
-    path: 'yourProducts',
+    path: 'boughtProducts',
     component: ProductsBoughtComponent,
     canActivate: [AuthGuard, RoleGuard],
     data: {
       expectedRoles: RoleModelComponent.UserPage,
     },
+    
+  },
+  {
+    path: 'yourProducts',
+    component: YourProductsComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: {
+      expectedRoles: RoleModelComponent.UserPage,
+    },
+    
   },
   {
     path: 'createProduct',

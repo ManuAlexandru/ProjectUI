@@ -1,8 +1,40 @@
-<mat-card class="example-card">
+<div class="container">
+
+  <mat-card *ngFor="let product of lstProducts" class="example-card" >
+    <mat-card-header>
+      <mat-card-title>{{product.title}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="product.photoRoute">
+    <mat-card-content>
+      <p>{{product.description}}</p>
+      <p>Price: {{product.actualPrice}}</p>
+      <p>Product added on {{createDate(product.createdDate)}}</p>
+      <p>The Action will end on {{createDate(product.endDate)}}</p>
+    </mat-card-content>
+    <mat-card-actions class="course-actions">
+      <!-- [routerLink]="['/courses', product.id]" -->
+        <button mat-raised-button color="primary" >
+          BID
+        </button>
+
+        <button mat-raised-button color="accent"
+               >
+                BUY NOW
+        </button>
+        <button mat-raised-button color="accent"
+        >
+        DETAILS
+ </button>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+
+
+  <!-- <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title>Shiba Inu</mat-card-title>
     </mat-card-header>
-    <img mat-card-image  src='assets/img/Photo10.jpg' alt="Photo of a Shiba Inu">
+    <img mat-card-image  src='assets\img\NoImage.jpg' alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
         The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
@@ -15,3 +47,35 @@
       <button mat-button>BUY NOW</button>
     </mat-card-actions>
   </mat-card>
+  <mat-card *ngFor="let product of lstProducts" class="example-card">
+
+    <mat-card-header>
+
+        <mat-card-title>{{product.title}}</mat-card-title>
+
+    </mat-card-header>
+
+    <img mat-card-image [src]="product.photoRoute">
+
+    <mat-card-content>
+        <p>{{product.description}}</p>
+        <p>Price: {{product.actualPrice}}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="course-actions">
+       [routerLink]="['/courses', product.id]" 
+        <button mat-raised-button color="primary" >
+          BID
+        </button>
+
+        <button mat-raised-button color="accent"
+               >
+                BUY NOW
+        </button>
+        <button mat-raised-button color="accent"
+        >
+        DETAILS
+ </button>
+    </mat-card-actions>
+
+</mat-card> -->

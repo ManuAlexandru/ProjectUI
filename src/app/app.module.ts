@@ -27,6 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPubSubModule } from '@pscoped/ngx-pub-sub';
 import {MatCardModule} from '@angular/material/card';
 import { CreateProductComponent } from './product-components/create-product/create-product.component';
+import { YourProductsComponent } from './product-components/your-products/your-products.component';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
+import { DialogBidComponent } from './dialog-bid/dialog-bid.component';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -46,6 +50,10 @@ export function tokenGetter() {
     AdminComponent,
     DialogLogoutComponent,
     CreateProductComponent,
+    YourProductsComponent,
+    DialogEditComponent,
+    DialogDeleteComponent,
+    DialogBidComponent,
    
   ],
   imports: [

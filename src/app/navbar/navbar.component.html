@@ -8,7 +8,10 @@
       <a mat-button routerLink="admin">Admin</a>
     </div>
     <div *ngIf="isAuthenticated && authUser.checkUser()">
-      <a mat-button routerLink="yourProducts">Commands</a>
+      <a mat-button routerLink="boughtProducts">Commands</a>
+    </div>
+    <div *ngIf="isAuthenticated && authUser.checkUser()">
+      <a mat-button routerLink="yourProducts">Your Products</a>
     </div>
     <div *ngIf="isAuthenticated && authUser.checkUser()">
       <a mat-button routerLink="createProduct">Add Product</a>
