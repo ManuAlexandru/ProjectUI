@@ -17,6 +17,7 @@ export class ProductService{
 
   postAddProduct(product:ProductModel):Observable<any>{
     var tokenHeader = new HttpHeaders({
+      
       "Authorization": 'Bearer ' + localStorage.getItem('token'),
       });
     return this.http.post(this.endpoint.addProductRoute,product,{headers:tokenHeader});

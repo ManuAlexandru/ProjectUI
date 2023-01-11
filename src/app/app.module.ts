@@ -34,6 +34,8 @@ import { DialogBidComponent } from './dialogs/dialog-bid/dialog-bid.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { FormsModule } from '@angular/forms'
 import { SearchPipe } from './shared/services/search.pipe';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -59,6 +61,7 @@ export function tokenGetter() {
     DialogBidComponent,
     SearchPipe,
    
+   
   ],
   imports: [
     BrowserModule,
@@ -76,6 +79,8 @@ export function tokenGetter() {
     NgxPubSubModule,
     MatCardModule,
     FormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     SimpleNotificationsModule.forRoot(),
     JwtModule.forRoot({
       config: {

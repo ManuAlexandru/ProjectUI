@@ -14,7 +14,9 @@ export class CreateProductComponent implements OnInit {
 
   constructor( private fb: FormBuilder,private productService:ProductService,private authService:AuthUser) { }
  directory="assets/img";
+ exampleHeader;
   selectedFile: File;
+  theEndDate:number;
   formData: ProductModel = new ProductModel();
   myForm: FormGroup;
   hide: boolean = true;
@@ -36,14 +38,12 @@ export class CreateProductComponent implements OnInit {
   get getPrice(){
     return this.myForm.get('price');
   }
-  onFileSelected(event:any) {
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
-  }
+ 
 
   onSubmit() {
     this.formData=this.myForm.value;
-  //this.formData.photo=this.selectedFile;
+ this.formData.endDate=this.theEndDate;
+ console.log(this.formData.endDate);
   this.formData.createdDate=Date.now();
   this.formData.userId=this.authService.getId();
 console.log(this.formData);
@@ -52,5 +52,14 @@ this.productService.postAddProduct(this.formData).subscribe((result)=>{
 });
   }
 
+  onFileSelected(event:any) {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+  }
+
+  updateDOB(dateObject) {
+    console.log(dateObject.value);
+    this.theEndDate=new Date(dateObject.value).getTime();
+  }
   
 }

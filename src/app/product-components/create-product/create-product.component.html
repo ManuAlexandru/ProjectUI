@@ -23,6 +23,14 @@
   </mat-error>
 </mat-form-field>
 <br>
+<mat-form-field appearance="fill">
+  <mat-label>Custom calendar header</mat-label>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="updateDOB($event)" >
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+</mat-form-field>
+<br>
 <input
 style="display: none"
 type="file"
