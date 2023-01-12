@@ -24,7 +24,7 @@ filterText:string="";
   this.productService.getRetreiveAllProducts().subscribe((data)=>{
 this.lstProducts=data;
 
-console.log(this.lstProducts);
+
   });
   }
 
