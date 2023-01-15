@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { NgxPubSubService } from '@pscoped/ngx-pub-sub';
 import { ProductResponseModel } from 'src/app/shared/models/productResponseModel';
 
 @Component({
@@ -9,9 +10,12 @@ import { ProductResponseModel } from 'src/app/shared/models/productResponseModel
 })
 export class DialogBidComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: ProductResponseModel) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: ProductResponseModel,
+  public pubsub: NgxPubSubService,) { }
 
   ngOnInit(): void {
   }
-
+  onClick(){
+    this.pubsub.publishEvent('bid', false);
+  }
 }

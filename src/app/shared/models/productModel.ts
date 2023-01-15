@@ -5,5 +5,6 @@ price:number;
 createdDate:number;
 endDate:number;
 userId:number;
+buyerId:number;
 // photo:File;
 }

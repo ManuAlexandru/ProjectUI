@@ -8,5 +8,6 @@ export  class ProductResponseModel{
     endDate:number;
     photoRoute:number;
     userId:number;
+    buyerId:number;
     // photo:File;
     }

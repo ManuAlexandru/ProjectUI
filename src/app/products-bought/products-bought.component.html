@@ -1,1 +1,32 @@
-<p>products-bought works!</p>
+
+    <div class="container">
+    
+      <mat-card *ngFor="let product of lstProducts" class="example-card" >
+        <mat-card-header>
+          <mat-card-title>{{product.title}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="product.photoRoute">
+        <mat-card-content>
+          <p>{{product.description}}</p>
+          <p>Price: {{product.boughtPrice}}</p>
+        </mat-card-content>
+        <!-- <mat-card-actions class="course-actions">
+        
+            <button mat-raised-button color="primary" 
+            >
+              BID
+            </button>
+    
+            <button mat-raised-button color="accent"
+                   >
+                    BUY NOW
+            </button>
+            <button mat-raised-button color="accent"
+            >
+            DETAILS
+     </button>
+        </mat-card-actions> -->
+      </mat-card>
+      </div>
+    
+    

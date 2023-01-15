@@ -5,6 +5,7 @@ import { AuthentificationComponent } from './auth-components/authentification/au
 import { LoginComponent } from './auth-components/login/login.component';
 import { RegisterComponent } from './auth-components/register/register.component';
 import { HomeComponent } from './home/home.component';
+import { AllExpiredProductsComponent } from './product-components/all-expired-products/all-expired-products.component';
 import { AllProductsComponent } from './product-components/all-products/all-products.component';
 import { CreateProductComponent } from './product-components/create-product/create-product.component';
 import { ProductComponent } from './product-components/product/product.component';
@@ -12,6 +13,7 @@ import { YourProductsComponent } from './product-components/your-products/your-p
 import { ProductsBoughtComponent } from './products-bought/products-bought.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { RoleGuard } from './shared/guards/role.guard';
+import { ExpiredProductModel } from './shared/models/expiredProductModel';
 import { RoleModelComponent } from './shared/models/role-model/role-model.component';
 
 const routes: Routes = [
@@ -27,6 +29,15 @@ const routes: Routes = [
   {
     path: 'boughtProducts',
     component: ProductsBoughtComponent,
+    canActivate: [AuthGuard, RoleGuard],
+    data: {
+      expectedRoles: RoleModelComponent.UserPage,
+    },
+    
+  },
+  {
+    path: 'expiredProducts',
+    component: AllExpiredProductsComponent,
     canActivate: [AuthGuard, RoleGuard],
     data: {
       expectedRoles: RoleModelComponent.UserPage,

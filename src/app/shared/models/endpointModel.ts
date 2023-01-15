@@ -14,4 +14,7 @@ public deleteProduct="http://localhost:"+this.port+"/api/Product/DeleteProduct";
 public getProduct="http://localhost:"+this.port+"/api/Product/GetProduct";
 public updateProduct="http://localhost:"+this.port+"/api/Product/UpdateProduct";
 public updateProductPrice="http://localhost:"+this.port+"/api/Product/UpdateProductPrice";
+public postBuyProduct="http://localhost:"+this.port+"/api/Product/BuyProduct";
+public getAllBoughtProduct="http://localhost:"+this.port+"/api/Product/GetAllBoughtProduct";
+public getAllExpiredProduct="http://localhost:"+this.port+"/api/Product/GetAllExpiredProduct";
 }

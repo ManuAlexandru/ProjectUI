@@ -20,8 +20,12 @@
     <div *ngIf="!isAuthenticated">
       <a mat-raised-button routerLink="auth">Sign Up</a>
     </div>
+    <div *ngIf="isAuthenticated && authUser.checkUser()">
+      <a mat-button routerLink="expiredProducts">Expired Products</a>
+    </div>
+    
     <div *ngIf="isAuthenticated">
       <a mat-raised-button color="warn" (click)="logout()">Log Out</a>
     </div>
-
+   
   </mat-toolbar>

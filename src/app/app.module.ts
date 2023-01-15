@@ -36,6 +36,9 @@ import { FormsModule } from '@angular/forms'
 import { SearchPipe } from './shared/services/search.pipe';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
+import { WebSocketAPI } from './shared/wbsSocketAspi';
+import { AllExpiredProductsComponent } from './product-components/all-expired-products/all-expired-products.component';
+
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -60,8 +63,7 @@ export function tokenGetter() {
     DialogDeleteComponent,
     DialogBidComponent,
     SearchPipe,
-   
-   
+    AllExpiredProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +92,7 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [],
+  providers: [WebSocketAPI],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

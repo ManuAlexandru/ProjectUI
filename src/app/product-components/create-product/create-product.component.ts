@@ -42,11 +42,13 @@ export class CreateProductComponent implements OnInit {
 
   onSubmit() {
     this.formData=this.myForm.value;
- this.formData.endDate=this.theEndDate;
+ this.formData.endDate=1;
  console.log(this.formData.endDate);
   this.formData.createdDate=Date.now();
   this.formData.userId=this.authService.getId();
+  this.formData.buyerId=0;
 console.log(this.formData);
+
 this.productService.postAddProduct(this.formData).subscribe((result)=>{
   console.log(result);
 });
