@@ -1,0 +1,52 @@
+<body>
+<h1>Here you cand add your product for sale!</h1>
+<form [formGroup]="myForm">
+  <mat-form-field appearance="outline">
+    <input matInput placeholder="Name" formControlName="title" />
+    <mat-error *ngIf="getTitle?.invalid && getTitle?.touched">
+      You have to write something!
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+   
+    <textarea matInput placeholder="Description" formControlName="description"></textarea> 
+    <mat-error *ngIf="getDescription?.invalid && getDescription?.touched">
+      You have to write something!
+    </mat-error>
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="outline">
+  <input matInput placeholder="Price" formControlName="price" />
+  <mat-error *ngIf="getPrice?.invalid && getPrice?.touched">
+    You have to enter a valid number!
+  </mat-error>
+</mat-form-field>
+<br>
+<mat-form-field appearance="fill">
+  <mat-label>Custom calendar header</mat-label>
+  <input matInput [matDatepicker]="picker" placeholder="Choose a date" (dateChange)="updateDOB($event)" >
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker [calendarHeaderComponent]="exampleHeader"></mat-datepicker>
+</mat-form-field>
+<br>
+<input
+style="display: none"
+type="file"
+multiple
+accept=".jpg"
+formControlName="file"
+#hiddenfileinput
+(change)="onFileSelected($event)"
+/>
+<br>
+<button mat-raised-button color="secondary" (click)="hiddenfileinput.click()">Add Images</button>
+<br>
+<br>
+  <button mat-raised-button color="primary" [disabled]="myForm.invalid" (click)="onSubmit()">
+    Add Product
+  </button>
+</form>
+</body>
+<simple-notifications></simple-notifications>

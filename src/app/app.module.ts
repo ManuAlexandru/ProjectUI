@@ -17,13 +17,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPubSubModule } from '@pscoped/ngx-pub-sub';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { SimpleNotificationsModule } from 'angular2-notifications';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './shared/services/search.pipe';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { WebSocketAPI } from './shared/wbsSocketAspi';
+import { AllExpiredProductsComponent } from './product-components/all-expired-products/all-expired-products.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -36,6 +37,7 @@ export function tokenGetter() {
     HomeComponent,
     RoleModelComponent,
     SearchPipe,
+    AllExpiredProductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,6 @@ export function tokenGetter() {
     }),
   ],
   providers: [WebSocketAPI],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
