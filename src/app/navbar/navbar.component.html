@@ -1,31 +1,7 @@
 <mat-toolbar color="primary">
-    <span><mat-icon>image_search</mat-icon>Ebay_Copy</span>
+    <span><mat-icon>image_search</mat-icon>Exam</span>
     <div class="spacer"></div>
   
     <a mat-button routerLink="">Home</a>
- 
-    <div *ngIf="isAuthenticated && authUser.checkAdmin()">
-      <a mat-button routerLink="admin">Admin</a>
-    </div>
-    <div *ngIf="isAuthenticated && authUser.checkUser()">
-      <a mat-button routerLink="boughtProducts">Commands</a>
-    </div>
-    <div *ngIf="isAuthenticated && authUser.checkUser()">
-      <a mat-button routerLink="yourProducts">Your Products</a>
-    </div>
-    <div *ngIf="isAuthenticated && authUser.checkUser()">
-      <a mat-button routerLink="createProduct">Add Product</a>
-    </div>
-    <a mat-button routerLink="allProducts">Products</a>
-    <div *ngIf="!isAuthenticated">
-      <a mat-raised-button routerLink="auth">Sign Up</a>
-    </div>
-    <div *ngIf="isAuthenticated && authUser.checkUser()">
-      <a mat-button routerLink="expiredProducts">Expired Products</a>
-    </div>
-    
-    <div *ngIf="isAuthenticated">
-      <a mat-raised-button color="warn" (click)="logout()">Log Out</a>
-    </div>
    
   </mat-toolbar>
