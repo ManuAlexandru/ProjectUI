@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
-import { RoleModelComponent } from './shared/models/role-model/role-model.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
@@ -20,10 +19,12 @@ import { NgxPubSubModule } from '@pscoped/ngx-pub-sub';
 import {MatCardModule} from '@angular/material/card';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import { FormsModule } from '@angular/forms'
-import { SearchPipe } from './shared/services/search.pipe';
+import { CommonModule } from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-import { WebSocketAPI } from './shared/wbsSocketAspi';
+import { AddBookComponent } from './add-book/add-book.component';
+import { AllBooksComponent } from './all-books/all-books.component';
+import { AllWordsComponent } from './all-words/all-words.component';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -34,14 +35,16 @@ export function tokenGetter() {
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    RoleModelComponent,
-    SearchPipe,
+    AddBookComponent,
+    AllBooksComponent,
+    AllWordsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
     MatIconModule,
+    CommonModule,
     MatInputModule,
     JwtModule,
     MatToolbarModule,
@@ -64,7 +67,7 @@ export function tokenGetter() {
       },
     }),
   ],
-  providers: [WebSocketAPI],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
