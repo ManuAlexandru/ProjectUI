@@ -23,7 +23,6 @@ import { CommonModule } from '@angular/common';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { AddBookComponent } from './add-book/add-book.component';
-import { AllBooksComponent } from './all-books/all-books.component';
 import { AllWordsComponent } from './all-words/all-words.component';
 
 export function tokenGetter() {
@@ -36,7 +35,6 @@ export function tokenGetter() {
     NavbarComponent,
     HomeComponent,
     AddBookComponent,
-    AllBooksComponent,
     AllWordsComponent,
   ],
   imports: [
