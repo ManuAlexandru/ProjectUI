@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AuthUser } from '../shared/services/authService';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   isAuthenticated: boolean=false;
-  constructor(public router: Router,
+  constructor(public authUser: AuthUser,
+    public router: Router,
     public dialog: MatDialog,
     
     ) { }
