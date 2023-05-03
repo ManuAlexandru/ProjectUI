@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot } from '@angular/router';
+import { RoleModelComponent } from '../models/role-model/role-model.component';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import jwt_decode from 'jwt-decode';
 import { HttpHeaders } from '@angular/common/http';
@@ -40,6 +41,14 @@ export class AuthUser {
       //need to be changed
       return null;
     }
+  }
+  checkAdmin() {
+    if (this.getRole() == 'No token!') return false;
+    return this.checkRole(this.getRole(), RoleModelComponent.AdminPage);
+  }
+  checkUser() {
+    if (this.getRole() == 'No token!') return false;
+    return this.checkRole(this.getRole(), RoleModelComponent.UserPage);
   }
   isAuthorized(route: ActivatedRouteSnapshot): boolean {
     return this.checkRole(this.getRole(), route.data.expectedRoles);
