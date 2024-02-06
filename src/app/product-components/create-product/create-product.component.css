@@ -1,4 +1,16 @@
-body{
-    background-color: rgb(197, 112, 223);
-    text-align: center;
+body {
+  background-color: rgb(197, 112, 223);
+  text-align: center;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Optional: Adjust this width as needed */
+.mat-form-field {
+  width: calc(
+    50% - 20px
+  ); /* 50% minus margin to accommodate two fields per row */
 }
